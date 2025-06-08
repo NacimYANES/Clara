@@ -9,7 +9,7 @@ df = pd.read_csv("MIMIC_III_finale.csv")
 df = df.head(10000)
 
 # Initialize OpenAI client
-client = openai.OpenAI(api_key="OPENAI_API_KEY")
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def extract_medical_info(text):
     try:
